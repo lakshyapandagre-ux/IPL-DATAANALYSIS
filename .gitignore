@@ -1,0 +1,29 @@
+# Ignore local virtual environments
+venv/
+**/venv/
+.env
+.venv
+env/
+IPL-Data-Analysis/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore large raw cricket dataset (110MB CSV)
+data/IPL.csv
+data/*.csv
+
+# Ignore local personal portfolio guides (so they stay on your PC but don't show up on GitHub)
+LinkedIn_Share.md
+Resume_Bullets.md
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+Desktop.ini
