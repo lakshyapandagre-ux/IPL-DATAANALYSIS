@@ -1,186 +1,239 @@
+````md
 # IPL Data Analysis & Visualization 🏏
 
 This project is a complete Exploratory Data Analysis (EDA) and Visualization project based on IPL (Indian Premier League) ball-by-ball data.
 
-As a 2nd-year B.Tech CSIT student learning Data Science, I built this project to improve my skills in:
-*   **Python Programming**
-*   **Pandas & NumPy** for data cleaning and manipulation
-*   **Data Visualization** (Matplotlib & Seaborn)
-*   **Exploratory Data Analysis (EDA) & Statistics**
+As a B.Tech CSIT student passionate about Data Science, Analytics, and AI/ML, I built this project to strengthen my skills in:
 
-The project focuses on understanding IPL trends, player performances, team statistics, venue analysis, and match insights using real IPL data from **2008 to 2026**!
+- Python Programming
+- Pandas & NumPy for data cleaning and manipulation
+- Data Visualization using Matplotlib & Seaborn
+- Exploratory Data Analysis (EDA)
+- Statistical Analysis & Pattern Recognition
+
+The project focuses on understanding IPL trends, player performances, venue analysis, team statistics, and match insights using real IPL data from 2008 to 2026.
 
 ---
 
-## 📌 Project Objectives
+# 📌 Project Objectives
 
 The main goals of this project were:
-*   Practice real-world data analysis on a large dataset
-*   Work with large datasets (over 283,000 deliveries!)
-*   Improve visualization skills to build neat, readable charts
-*   Learn the basics of cricket analytics
-*   Build a strong portfolio project for GitHub and summer internship applications
+
+- Practice real-world data analysis on a large dataset
+- Work with large-scale datasets containing 283,000+ deliveries
+- Improve visualization and storytelling skills
+- Understand cricket analytics and match insights
+- Build a strong portfolio project for internships and GitHub
 
 ---
 
-## 📂 Dataset Information
+# 📂 Dataset Information
 
 The dataset contains:
-*   Ball-by-ball IPL data
-*   Match details (season, city, venue, toss)
-*   Batter and bowler statistics
-*   Dismissal types and wickets
-*   Team performance data
-*   Match results
+
+- Ball-by-ball IPL delivery data
+- Match information
+- Batter and bowler statistics
+- Venue and toss details
+- Team performance analysis
+- Match outcomes and results
 
 ### Dataset Size
-*   **Rows**: ~283,000+
-*   **Columns**: 65
+- Rows: 283,000+
+- Columns: 65
 
 ---
 
-## 🛠 Technologies Used
+# 🛠 Technologies Used
 
-*   **Python**
-*   **Pandas** & **NumPy**
-*   **Matplotlib** & **Seaborn**
-*   **Plotly** (for interactive matchups)
-*   **Jupyter Notebook**
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Plotly
+- Jupyter Notebook
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```bash
-IPL-Data-Analysis/
+IPL-DATAANALYSIS/
 │
-├── data/
-│   └── IPL.csv                      # Main ball-by-ball CSV data (110MB)
-│
-├── notebooks/
-│   └── IPL_Analysis.ipynb           # Main exploratory Jupyter Notebook
-│
-├── images/                          # Exported high-resolution charts
+├── images/
 │   ├── top_10_run_scorers.png
 │   ├── highest_strike_rates.png
 │   ├── batting_phase_analysis.png
-│   └── ... (19 charts in total)
+│   └── ...
 │
-├── src/                             # Automated python utility scripts
+├── notebooks/
+│   └── IPL_Analysis.ipynb
+│
+├── src/
 │   ├── generate_notebook.py
 │   └── execute_notebook.py
 │
-├── README.md                        # Documentation
-├── requirements.txt                 # Dependencies
+├── README.md
+├── requirements.txt
 └── .gitignore
-```
+````
 
 ---
 
-## 📊 Analysis Performed
+# 📊 Analysis Performed
 
-### 🔹 Data Cleaning
-*   Removed unnecessary columns (like index columns)
-*   Checked and accounted for missing values in sparse columns (like `player_out` and `wicket_kind`)
-*   Checked and removed duplicate rows
-*   Standardised historical team names (Delhi Daredevils $\rightarrow$ Capitals, Kings XI Punjab $\rightarrow$ Punjab Kings, RCB $\rightarrow$ Bengaluru) so career stats stay contiguous
-*   Cleaned up season formats (like `2007/08` $\rightarrow$ `2008`) for chronological plotting
+## 🔹 Data Cleaning
 
-### 🔹 Batting Analysis
-*   Top 10 run-scorers in IPL history (Virat Kohli is leading!)
-*   Best career batting strike rates (Min 1,000 balls faced, Andre Russell leads with 170+)
-*   Most boundaries hit (Fours vs. Sixes)
-*   Highest batting averages (calculated based on actual dismissals, led by KL Rahul & Kohli)
-*   Most milestones (Fifties and Hundreds)
-*   Batting performance across innings phases: **Powerplay** vs. **Middle** vs. **Death Overs**
-
-### 🔹 Bowling Analysis
-*   Top 10 highest wicket-takers (Spinners lead the middle overs!)
-*   Best career bowling economy rates (Min 500 balls, Sunil Narine & Rashid Khan lead)
-*   Dot ball percentage for bowlers (Dale Steyn & Malinga lead with over 40% dots)
-*   Wicket distribution analysis (caught is the most common dismissal at 62.9%)
-
-### 🔹 Team Analysis
-*   Most successful teams in history (Mumbai Indians & Chennai Super Kings lead in wins)
-*   Win percentage of teams (CSK leads with over 58%)
-*   Toss win impact (winning the toss is a 50.6% coin flip; doesn't guarantee a win)
-*   Chasing vs. defending outcomes (chasing teams win 54.5% of matches)
-
-### 🔹 Venue Analysis
-*   Highest scoring venues by average 1st innings score (Chinnaswamy & Wankhede average 175+)
-*   Best chasing venues (highest chasing win percentages are over 60%)
-
-### 🔹 Advanced Insights & Match Progression
-*   Over-by-over scoring runs vs. wicket fall progression
-*   Powerplay score ranges win probability correlation (scoring 65+ runs boosts win chance to 65%+)
-*   Batter vs. Bowler face-to-face head-to-head matchup analyzer function
+* Removed unnecessary columns and duplicate records
+* Handled missing values in sparse cricket datasets
+* Standardized historical IPL team names
+* Cleaned inconsistent season formats
+* Improved data consistency for long-term trend analysis
 
 ---
 
-## 📈 Sample Visualizations
+## 🔹 Batting Analysis
 
-The Jupyter Notebook generates and exports **19 clean charts** into the `images/` directory:
-*   **Bar Charts**: Career runs, strike rates, win percentages, boundaries
-*   **Subplots**: Runs & wickets over-by-over, batting phases strike rate & average side-by-side
-*   **Pie Charts**: Distribution of wicket kinds in IPL history
-*   **Line Charts**: Wicket progression over the 20 overs
-
----
-
-## 🎯 Key Learnings
-
-Through building this project, I learned:
-1.  **Working with Large Datasets**: How to efficiently read, group, and aggregate a 110MB dataset with Pandas.
-2.  **Real-World Data Cleaning**: The absolute necessity of combining renamed teams and fixing season formats so our numbers are contiguous.
-3.  **Cricket Analytics Concepts**: Calculating domain-correct cricket stats (e.g. strike rates excluding wides, averages off dismissals instead of matches).
-4.  **Exploratory Data Analysis**: How to ask questions from raw data and answer them step-by-step using Python.
+* Top 10 highest run scorers in IPL history
+* Best batting strike rates
+* Boundary distribution analysis
+* Highest batting averages
+* Powerplay, middle-over, and death-over comparisons
+* Player milestone analysis (50s & 100s)
 
 ---
 
-## 🚀 Future Improvements
+## 🔹 Bowling Analysis
 
-In the future, I plan to:
-*   Build an interactive IPL dashboard using Streamlit
-*   Add Machine Learning models to predict matches in real-time
-*   Create player rating systems based on recent seasons
+* Highest wicket takers
+* Best bowling economy rates
+* Dot-ball percentage analysis
+* Wicket-type distribution insights
+* Bowling efficiency comparisons
 
 ---
 
-## ▶️ How to Run
+## 🔹 Team Analysis
 
-### 1. Clone the Repository
+* Most successful IPL teams
+* Team win percentage analysis
+* Toss impact on results
+* Chasing vs defending trends
+* Match-winning patterns and consistency analysis
+
+---
+
+## 🔹 Venue Analysis
+
+* Highest scoring IPL venues
+* Best chasing grounds
+* Venue-wise first innings trends
+* Ground-based scoring comparisons
+
+---
+
+## 🔹 Advanced Match Insights
+
+* Over-by-over scoring progression
+* Wicket fall progression analysis
+* Powerplay score vs winning probability
+* Batter vs bowler head-to-head matchup analysis
+
+---
+
+# 📈 Visualizations Generated
+
+This project generates 19+ clean and insightful visualizations including:
+
+* Bar Charts
+* Pie Charts
+* Line Graphs
+* Comparative Analysis Plots
+* Match Progression Visualizations
+
+The charts help uncover player performance trends, team strengths, venue patterns, and overall IPL insights.
+
+---
+
+# 🎯 Key Learnings
+
+Through this project, I learned:
+
+* Working efficiently with large datasets using Pandas
+* Real-world data preprocessing workflows
+* Data storytelling through visualization
+* Statistical analysis and cricket analytics
+* Structuring end-to-end EDA projects professionally
+
+---
+
+# 🚀 Future Improvements
+
+Planned future enhancements include:
+
+* Interactive IPL dashboard using Streamlit
+* Machine Learning based match prediction system
+* Advanced player rating models
+* Real-time IPL analytics dashboards
+
+---
+
+# ▶️ How to Run
+
+## 1. Clone Repository
+
 ```bash
-git clone https://github.com/suyash-codez/IPL-Data-Analysis.git
-cd IPL-Data-Analysis
+git clone https://github.com/lakshyapandagre-ux/IPL-DATAANALYSIS.git
+cd IPL-DATAANALYSIS
 ```
 
-### 2. Install Libraries
+---
+
+## 2. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the Notebook
-Open `notebooks/IPL_Analysis.ipynb` using Jupyter Notebook or VS Code. 
+---
 
-*(Note: The notebook is completely executed, so all data tables, printed matchup outputs, and Seaborn charts are already fully populated and visible right away!)*
+## 3. Run Notebook
+
+Open:
+
+```bash
+notebooks/IPL_Analysis.ipynb
+```
+
+using Jupyter Notebook or VS Code.
 
 ---
 
-## 👨‍💻 About Me
+# 👨‍💻 About Me
 
-Hi! I am **Suyash**, a 2nd-year B.Tech CSIT student currently learning Data Science, Python programming, and basic Machine Learning. I am highly interested in exploring data stories and sports analytics!
+Hi, I’m Lakshya Pandagre — a B.Tech CSIT student passionate about Data Science, AI/ML, Analytics, and Web Development. I enjoy building data-driven projects, exploring real-world datasets, and continuously improving my technical skills through hands-on learning.
 
-This project is part of my learning journey in:
-*   Data Analysis & Exploration
-*   Visualization & Data Storytelling
-*   Python Programming
+This project reflects my journey in:
+
+* Data Analysis & Exploration
+* Data Visualization & Storytelling
+* Python Programming
+* Statistical Thinking
+* Sports Analytics
 
 ---
 
-## 📬 Connect With Me
+# 📬 Connect With Me
 
-*   **LinkedIn**: [suyash-codez](https://www.linkedin.com/in/suyash-codez)
-*   **GitHub**: [suyash-codez](https://github.com/suyash-codez)
-*   **Email**: suyashverma0023@gmail.com
+* GitHub: https://github.com/lakshyapandagre-ux
+* LinkedIn: https://www.linkedin.com/in/lakshya-pandagre-937a3b328/
+* Portfolio: https://lakshya-portfolio-d5va.vercel.app/
+* Email: [lakshyapandagre@gmail.com](mailto:lakshyapandagre@gmail.com)
 
-⭐ *If you liked this project, feel free to give it a star!*
+---
+
+⭐ If you liked this project, feel free to give it a star!
+
+```
+```
